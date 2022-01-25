@@ -36,6 +36,7 @@ namespace PayCompute.Entities
 
         public DateTime DateJoined { get; set; }
         public string Designation { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
         public string ImageUrl { get; set; }
 

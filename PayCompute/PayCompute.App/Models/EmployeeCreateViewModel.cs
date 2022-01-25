@@ -46,14 +46,16 @@ namespace PayCompute.App.Models
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
-        [DataType(DataType.Date), Display(Name ="Date Joined")]
-        public DateTime DateJoined { get; set; }
+        [DataType(DataType.Date), Display(Name = "Date Joined")]
+        public DateTime DateJoined { get; set; } = DateTime.UtcNow;
 
         [Required(ErrorMessage ="Job role is  required"), StringLength(100)]
         public string Designation { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
 
         [Display(Name ="Photo")]
         public IFormFile ImageUrl { get; set; }
