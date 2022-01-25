@@ -136,7 +136,7 @@ namespace PayCompute.App.Controllers
                 {
                     return NotFound();
                 }
-               
+
                 employee.EmployeeNo = model.EmployeeNo;
                 employee.FirstName = model.FirstName;
                 employee.MiddleName = model.MiddleName;
@@ -172,5 +172,64 @@ namespace PayCompute.App.Controllers
 
             return View(model);
         }
+
+
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            var employee = _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            var model = new EmployeeDetailViewModel
+            {
+                Id = employee.Id,
+                FullName = employee.FullName,
+                Gender = employee.Gender,
+                Email = employee.Email,
+                DOB = employee.DOB,
+                DateJoined = employee.DateJoined,
+                NationalInsuranceNo = employee.NationalInsuranceNo,
+                PaymentMethod = employee.PaymentMethod,
+                StudentLoan = employee.StudentLoan,
+                UnionMember = employee.UnionMember,
+                Address = employee.Address,
+                City = employee.City,
+                PostalCode = employee.PostalCode,
+                Phone = employee.Phone,
+                Designation = employee.Designation,
+                ImageUrl = employee.ImageUrl
+
+            };
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var employee = _employeeService.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            var model = new EmployeeDeleteViewModel
+            {
+                Id = employee.Id,
+                FullName = employee.FullName
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(EmployeeDeleteViewModel model)
+        {
+            await _employeeService.DeleteAsync(model.Id);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
