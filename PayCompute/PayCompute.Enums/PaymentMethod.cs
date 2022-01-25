@@ -1,4 +1,4 @@
-﻿namespace PayCompute.Entities
+﻿namespace PayCompute.Enums
 {
     public enum PaymentMethod
     {

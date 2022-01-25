@@ -1,4 +1,6 @@
-﻿namespace PayCompute.App.Models
+﻿using System;
+
+namespace PayCompute.App.Models
 {
     public class EmployeeIndexViewModel
     {

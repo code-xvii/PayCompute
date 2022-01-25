@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCompute.Entities", "PayC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCompute.Persistence", "PayCompute.Persistence\PayCompute.Persistence.csproj", "{42216801-5F29-4978-94EF-B28211DD809A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayCompute.Enums", "PayCompute.Enums\PayCompute.Enums.csproj", "{5E7E41D3-D07D-4BBD-AB5A-EBC2049C5538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{42216801-5F29-4978-94EF-B28211DD809A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42216801-5F29-4978-94EF-B28211DD809A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42216801-5F29-4978-94EF-B28211DD809A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7E41D3-D07D-4BBD-AB5A-EBC2049C5538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7E41D3-D07D-4BBD-AB5A-EBC2049C5538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7E41D3-D07D-4BBD-AB5A-EBC2049C5538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7E41D3-D07D-4BBD-AB5A-EBC2049C5538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
