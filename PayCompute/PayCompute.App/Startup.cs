@@ -38,6 +38,9 @@ namespace PayCompute.App
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IPayComputationService, PayComputaionService>();
+            services.AddScoped<ITaxService, TaxService>();
+            services.AddScoped<INationalInsuranceContributionServie, NationalInsuranceContributionService>();
 
             services.AddControllersWithViews();
         }

@@ -8,11 +8,10 @@ namespace PayCompute.App.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Full Name")]
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
-
-        [Display(Name = "Full Name")]
         public string FullName { get; set; }
         public string NiNo { get; set; }
 

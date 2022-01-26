@@ -2,6 +2,7 @@
 using PayCompute.App.Models;
 using PayCompute.Entities;
 using PayCompute.Services;
+using RotativaCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -142,7 +143,7 @@ namespace PayCompute.App.Controllers
         }
 
         [HttpGet]
-        public IActionResult PaySlip(int id)
+        public IActionResult Payslip(int id)
         {
             var paymentRecord = _payComputationService.GetById(id);
             if (paymentRecord == null)
@@ -179,6 +180,15 @@ namespace PayCompute.App.Controllers
                 NetPayment = paymentRecord.NetPayment,
             };
             return View(model);
+        }
+
+        public IActionResult GeneratePayslipPdf(int id)
+        {
+            var payslip = new ActionAsPdf("Payslip", new { id = id })
+            {
+                FileName = "payslip.pdf"
+            };
+            return payslip;
         }
     }
 }

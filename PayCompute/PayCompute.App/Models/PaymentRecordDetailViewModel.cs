@@ -20,7 +20,7 @@ namespace PayCompute.App.Models
         [Display(Name = "Pay Date"), DataType(DataType.Date)]
         public DateTime PayDate { get; set; }
 
-        [Display(Name = "Month"), DataType(DataType.Date)]
+        [Display(Name = "Month")]
         public string PayMonth { get; set; } 
 
         [Display(Name = "Tax Year")]
