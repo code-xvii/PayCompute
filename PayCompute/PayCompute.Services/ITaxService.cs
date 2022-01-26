@@ -8,6 +8,6 @@ namespace PayCompute.Services
 {
     public interface ITaxService
     {
-        decimal TaxAmount(decimal totalAmount);
+        decimal TaxAmount(decimal totalAmount);       
     }
 }

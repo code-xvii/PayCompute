@@ -1,4 +1,5 @@
-﻿using PayCompute.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PayCompute.Entities;
 using PayCompute.Persistence;
 using System;
 using System.Collections.Generic;
@@ -83,5 +84,7 @@ namespace PayCompute.Services.Implementations
 
         public decimal TotalEarnings(decimal overtimeEarnings, decimal contractualEarnings) 
             => overtimeEarnings + contractualEarnings;
+
+        public TaxYear GetTaxYearById(int id) => _context.TaxYears.FirstOrDefault(ty => ty.Id == id);
     }
 }

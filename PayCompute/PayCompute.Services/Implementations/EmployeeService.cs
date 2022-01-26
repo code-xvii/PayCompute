@@ -1,4 +1,5 @@
-﻿using PayCompute.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PayCompute.Entities;
 using PayCompute.Persistence;
 using System;
 using System.Collections.Generic;
@@ -87,6 +88,15 @@ namespace PayCompute.Services.Implementations
             var employee = GetEmployeeById(employeeId);
             unionFee = employee.UnionMember == Enums.UnionMember.Yes ? 10m : 0m;
             return unionFee;
+        }
+
+        public IEnumerable<SelectListItem> GetAllEmployeesForPayroll()
+        {
+            return GetEmployees().Select(e => new SelectListItem
+            {
+                Text = e.FullName,
+                Value = e.Id.ToString(),
+            });
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using PayCompute.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PayCompute.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace PayCompute.Services
     {
         Employee GetEmployeeById(int employeeId);
         IEnumerable<Employee> GetEmployees();
+        IEnumerable<SelectListItem> GetAllEmployeesForPayroll();
         Task CreateAsync(Employee newEmployee);
         Task UpdateAsync(Employee newEmployee);
         Task UpdateAsync(int employeeId);
